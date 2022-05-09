@@ -15,6 +15,7 @@ INC_DIRS = -I./ $(addprefix -I, $(SUBDIR))
 
 PHONY := $(TARGET)
 $(TARGET): $(OBJS)
+	mkdir -p $(OUTDIR)
 	$(CC) -o $(OUTDIR)/$@ $(OBJS)
 
 $(OBJDIR)/%.o: %.cc $(INCS)
