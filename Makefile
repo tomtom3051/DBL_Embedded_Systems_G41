@@ -3,7 +3,7 @@
 TARGET = dbl
 
 CC = g++
-CFLAGS = -g
+CFLAGS = -g -Wall
 
 OUTDIR = ./bin
 SUBDIR = example_module
