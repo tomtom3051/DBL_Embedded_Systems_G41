@@ -9,7 +9,14 @@
 
 #include <iostream>
 
+#include "foo.h"
+
 int main() {
+	Foo bar;
+
 	std::cout << "hello world! :D\n";
+
+	std::cout << "Foo::add(1,2) = " << bar.add(1,2) << "\n";
+
 	return 0;
 }
