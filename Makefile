@@ -14,11 +14,13 @@ SRCS = $(wildcard *.cc $(foreach fd, $(SUBDIR), $(fd)/*.cc))
 NODIR_SRC = $(notdir $(SRCS))
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:cc=o))
 INC_DIRS = -I./ $(addprefix -I, $(SUBDIR))
+LIBS = -lpigpio
+LIB_DIRS = 
 
 PHONY := $(TARGET)
 $(TARGET): $(OBJS)
 	mkdir -p $(OUTDIR)
-	$(CC) -o $(OUTDIR)/$@ $(OBJS)
+	$(CC) -o $(OUTDIR)/$@ $(OBJS) $(LIB_DIRS) $(LIBS)
 
 $(OBJDIR)/%.o: %.cc $(INCS)
 	mkdir -p $(@D)
